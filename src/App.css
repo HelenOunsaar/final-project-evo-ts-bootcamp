@@ -1,0 +1,26 @@
+body {
+  background-image: url('assets/wintery-sunburst.png');
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.header {
+  font-size: 52px;
+  background: -webkit-linear-gradient(#eee, #01015d);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  padding-right: 40px;
+}
+
+.reels {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
