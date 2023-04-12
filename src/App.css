@@ -5,9 +5,10 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .header {
   font-size: 52px;
-  background: -webkit-linear-gradient(#eee, #01015d);
+  background: -webkit-linear-gradient(#eee, #0212f4);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
@@ -23,4 +24,28 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.spinBtn {
+  position: absolute;
+  left: 50%;
+  width: 100px;
+  margin-left: -50px;
+  bottom:20px;
+  background-color: #0011ff;
+  color: white;
+  border: none;
+  border-radius: 70%;
+  padding: 5px;
+  font-size: 21px;
+  height: 100px;
+  width: 100px;
+  box-shadow: 0 2px 4px darkslategray;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.spinBtn:active {
+  background-color: #232fdd;
+  box-shadow: 0 0 2px darkslategray;
+  transform: translateY(2px);
 }

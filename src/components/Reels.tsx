@@ -10,30 +10,37 @@ import Button from "./Button";
 const image = [appleImage, blueberryImage, cherriesImage, grapesImage, passionfruitImage, strawberryImage]
 
 const Reels: React.FC = () => {
-    const [reelImages, setReelImages] = useState<string[]>([]);
-  
-    const spinReels = () => {
-      const randomIndices: number[] = [];
-      while (randomIndices.length < 3) {
-        const randomIndex = Math.floor(Math.random() * 6);
-        if (!randomIndices.includes(randomIndex)) {
-          randomIndices.push(randomIndex);
-        }
+  const [reelImages, setReelImages] = useState<string[]>(getNewReels());
+
+  function getNewReels() {
+    const randomIndices: number[] = [];
+    while (randomIndices.length < 3) {
+      const randomIndex = Math.floor(Math.random() * 6);
+      if (!randomIndices.includes(randomIndex)) {
+        randomIndices.push(randomIndex);
       }
-      const newReelImages = randomIndices.map(index => image[index]);
-      setReelImages(newReelImages);
-    };
-  
-    return (
-      <div>
-        <div className="reels">
-          {reelImages.map((image, index) => (
-            <img key={index} src={image} alt={`Reel ${index + 1}`} />
-          ))}
-        </div>
+    }
+    const newReelImages = randomIndices.map(index => image[index]);
+    return newReelImages;
+  };
+
+  const spinReels = () => {
+    const newReels = getNewReels();
+    setReelImages(newReels);
+  };
+
+  return (
+    <div>
+      <div className="reels">
+        {reelImages.map((image, index) => (
+          <img key={index} src={image} alt={`Reel ${index + 1}`} />
+        ))}
+      </div>
+      <div className="btncontainer">
         <Button onClick={spinReels} text="Spin the reels" />
       </div>
-    );
-  };
-  
-  export default Reels;
+    </div>
+  );
+};
+
+export default Reels;
