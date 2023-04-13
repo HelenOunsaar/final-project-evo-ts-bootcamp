@@ -5,36 +5,57 @@ import cherriesImage from '../assets/cherries.png';
 import grapesImage from '../assets/grapes.png';
 import passionfruitImage from '../assets/passion-fruit.png';
 import strawberryImage from '../assets/strawberry.png';
+import Reel from "./Reel";
 import Button from "./Button";
 
-const image = [appleImage, blueberryImage, cherriesImage, grapesImage, passionfruitImage, strawberryImage]
+const symbol = [appleImage, blueberryImage, cherriesImage, grapesImage, passionfruitImage, strawberryImage]
 
 const Reels: React.FC = () => {
-  const [reelImages, setReelImages] = useState<string[]>(getNewReels());
+  const [reelSymbol, setReelSymbol] = useState<string[]>(getNewReels());
 
-  function getNewReels() {
-    const randomIndices: number[] = [];
-    while (randomIndices.length < 3) {
-      const randomIndex = Math.floor(Math.random() * 6);
-      if (!randomIndices.includes(randomIndex)) {
-        randomIndices.push(randomIndex);
+  function getNewReels(): string[] {
+    const newReelSymbols: string[] = [];
+    const randomSymbols: string[] = [];
+
+    while (randomSymbols.length < 6) {
+      const randomIndex: number = Math.floor(Math.random() * symbol.length);
+      const randomSymbol: string = symbol[randomIndex];
+      if (!randomSymbols.includes(randomSymbol)) {
+        randomSymbols.push(randomSymbol);
       }
+    };
+
+    for (let i: number = 0; i < 9; i++) {
+      const randomIndex: number = Math.floor(Math.random() * randomSymbols.length);
+      const randomSymbol: string = randomSymbols[randomIndex];
+      newReelSymbols.push(randomSymbol);
     }
-    const newReelImages = randomIndices.map(index => image[index]);
-    return newReelImages;
-  };
+    return newReelSymbols;
+  }
 
   const spinReels = () => {
     const newReels = getNewReels();
-    setReelImages(newReels);
+    setReelSymbol(newReels);
   };
 
   return (
     <div>
       <div className="reels">
-        {reelImages.map((image, index) => (
-          <img key={index} src={image} alt={`Reel ${index + 1}`} />
-        ))}
+        <div className="row">
+          <Reel symbol={reelSymbol[0]} />
+          <Reel symbol={reelSymbol[1]} />
+          <Reel symbol={reelSymbol[2]} />
+        </div>
+        <div className="row">
+          <Reel symbol={reelSymbol[3]} />
+          <Reel symbol={reelSymbol[4]} />
+          <Reel symbol={reelSymbol[5]} />
+        </div>
+        <div className="row">
+          <Reel symbol={reelSymbol[6]} />
+          <Reel symbol={reelSymbol[7]} />
+          <Reel symbol={reelSymbol[8]} />
+        </div>
       </div>
       <div className="btncontainer">
         <Button onClick={spinReels} text="Spin the reels" />

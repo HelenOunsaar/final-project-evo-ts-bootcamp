@@ -8,8 +8,9 @@ body {
 
 .header {
   font-size: 52px;
-  background: -webkit-linear-gradient(#eee, #0212f4);
+  background: linear-gradient(#eee, #0212f4); 
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
 }
@@ -22,7 +23,6 @@ img {
 
 .reels {
   display: flex;
-  flex-direction: row;
   justify-content: center;
 }
 
