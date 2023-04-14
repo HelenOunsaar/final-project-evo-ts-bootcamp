@@ -9,6 +9,7 @@ import Reel from "./Reel";
 import Button from "./Button";
 
 const symbol = [appleImage, blueberryImage, cherriesImage, grapesImage, passionfruitImage, strawberryImage]
+const spinDuration = 3000;
 
 const Reels: React.FC = () => {
   const [reelSymbol, setReelSymbol] = useState<string[]>(getNewReels());
@@ -35,23 +36,30 @@ const Reels: React.FC = () => {
 
   const spinReels = () => {
     const newReels = getNewReels();
-    setReelSymbol(newReels);
+    const intervalId = setInterval(() => {
+      const nextReels = getNewReels();
+      setReelSymbol(nextReels);
+    }, 200);
+    setTimeout(() => {
+      clearInterval(intervalId);
+      setReelSymbol(newReels);
+    }, spinDuration);
   };
 
   return (
     <div>
       <div className="reels">
-        <div className="row">
+        <div>
           <Reel symbol={reelSymbol[0]} />
           <Reel symbol={reelSymbol[1]} />
           <Reel symbol={reelSymbol[2]} />
         </div>
-        <div className="row">
+        <div>
           <Reel symbol={reelSymbol[3]} />
           <Reel symbol={reelSymbol[4]} />
           <Reel symbol={reelSymbol[5]} />
         </div>
-        <div className="row">
+        <div>
           <Reel symbol={reelSymbol[6]} />
           <Reel symbol={reelSymbol[7]} />
           <Reel symbol={reelSymbol[8]} />
