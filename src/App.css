@@ -49,3 +49,12 @@ img {
   box-shadow: 0 0 2px darkslategray;
   transform: translateY(2px);
 }
+
+@keyframes scale {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1) rotate(360deg); }
+}
+.winner {
+  animation: scale 1s ease-in-out, spin 1s linear;
+}

@@ -28,6 +28,7 @@ const winCombos = [
 
 const Reels: React.FC = () => {
   const [reelSymbol, setReelSymbol] = useState<string[]>(getNewReels());
+  const [winDetected, setWinDetected] = useState(false);
 
   function getNewReels(): string[] {
     const newReelSymbols: string[] = [];
@@ -72,8 +73,10 @@ const Reels: React.FC = () => {
     });
     if (win) {
       console.log('You win!');
+      setWinDetected(true);
     } else {
       console.log('Better luck next time!');
+      setWinDetected(false);
     }
   }
 
@@ -81,19 +84,19 @@ const Reels: React.FC = () => {
     <div>
       <div className="reels">
         <div>
-          <Symbol symbol={reelSymbol[0]} />
-          <Symbol symbol={reelSymbol[1]} />
-          <Symbol symbol={reelSymbol[2]} />
+          <Symbol symbol={reelSymbol[0]} winDetected={winDetected} />
+          <Symbol symbol={reelSymbol[1]} winDetected={winDetected} />
+          <Symbol symbol={reelSymbol[2]} winDetected={winDetected} />
         </div>
         <div>
-          <Symbol symbol={reelSymbol[3]} />
-          <Symbol symbol={reelSymbol[4]} />
-          <Symbol symbol={reelSymbol[5]} />
+          <Symbol symbol={reelSymbol[3]} winDetected={winDetected} />
+          <Symbol symbol={reelSymbol[4]} winDetected={winDetected} />
+          <Symbol symbol={reelSymbol[5]} winDetected={winDetected }/>
         </div>
         <div>
-          <Symbol symbol={reelSymbol[6]} />
-          <Symbol symbol={reelSymbol[7]} />
-          <Symbol symbol={reelSymbol[8]} />
+          <Symbol symbol={reelSymbol[6]} winDetected={winDetected} />
+          <Symbol symbol={reelSymbol[7]} winDetected={winDetected} />
+          <Symbol symbol={reelSymbol[8]} winDetected={winDetected} />
         </div>
       </div>
       <div className="btncontainer">

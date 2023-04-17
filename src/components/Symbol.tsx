@@ -2,12 +2,13 @@ import React from "react";
 
 type SymbolProps = {
   symbol: string;
+  winDetected: boolean;
 };
 
-const Symbol: React.FC<SymbolProps> = ({ symbol }) => {
+const Symbol: React.FC<SymbolProps> = ({ symbol, winDetected }) => {
   return (
-    <div>
-      <img src={symbol} alt="symbol" />
+    <div id={`symbol-${symbol}`}>
+      <img src={symbol} alt="symbol" className={winDetected ? 'winner' : ''} />
     </div>
   );
 };
