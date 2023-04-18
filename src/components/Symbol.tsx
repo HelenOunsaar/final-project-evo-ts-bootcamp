@@ -2,13 +2,19 @@ import React from "react";
 
 type SymbolProps = {
   symbol: string;
-  winDetected: boolean;
+  isWinningSymbol: boolean;
 };
 
-const Symbol: React.FC<SymbolProps> = ({ symbol, winDetected }) => {
+// an image tag with the src attribute set to the symbol prop value, and the className attribute set to "winner", if the isWinningSymbol prop is true.
+const Symbol: React.FC<SymbolProps> = ({ symbol, isWinningSymbol }) => {
+  console.log(`Symbol ${symbol} isWinningSymbol: ${isWinningSymbol}`);
   return (
     <div id={`symbol-${symbol}`}>
-      <img src={symbol} alt="symbol" className={winDetected ? 'winner' : ''} />
+      <img
+        src={symbol}
+        alt="symbol"
+        className={isWinningSymbol ? "winner" : ""}
+      />
     </div>
   );
 };

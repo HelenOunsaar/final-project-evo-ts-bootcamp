@@ -50,11 +50,23 @@ img {
   transform: translateY(2px);
 }
 
-@keyframes scale {
-  0% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.5); }
-  100% { transform: scale(1) rotate(360deg); }
-}
 .winner {
-  animation: scale 1s ease-in-out, spin 1s linear;
+  animation: scale 1s linear;
+  animation-iteration-count: 2;
 }
+
+@keyframes scale {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.5) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+
+
+
