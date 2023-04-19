@@ -1,6 +1,7 @@
-import './App.css'
-import Header from './components/Header'
-import Reels from './components/Reels'
+import './App.css';
+import Header from './components/Header';
+import Reels from './components/Reels';
+import Level from './components/Level';
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
      <Header title='FRUIT SPINNER'/>
      <Reels />
+     <Level level={0}/>
     </div>
   )
 }
