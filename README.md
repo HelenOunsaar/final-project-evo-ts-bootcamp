@@ -1,6 +1,6 @@
 # Slot Game
 
-A simple casino slot game built with React, Typescript and Vite, featuring SVG backgrounds and symbols from Flaticon.
+A simple casino slot game built with React, Redux, Typescript and Vite, featuring SVG backgrounds and symbols from Flaticon.
 
 ## Installation
 
@@ -20,6 +20,7 @@ To play the casino slot game, simply spin the reels and see if you can hit a win
 This project was built using:
 
 - React
+- Redux
 - Typescript
 - Vite
 - SVG backgrounds from https://www.svgbackgrounds.com

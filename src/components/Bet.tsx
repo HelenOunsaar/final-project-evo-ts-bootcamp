@@ -1,10 +1,9 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-interface BetProps {
-  bet: number;
-}
+const Bet: React.FC = () => {
+  const bet = useSelector((state: any) => state.bet);
 
-const Bet: React.FC<BetProps> = ({ bet }) => {
   return (
     <div>
       <label htmlFor="bet">Bet:</label>

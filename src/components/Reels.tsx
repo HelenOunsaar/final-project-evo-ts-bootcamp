@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from 'react-redux';
 import appleImage from '../assets/apple.png';
 import blueberryImage from '../assets/blueberry.png';
 import cherriesImage from '../assets/cherries.png';
@@ -32,6 +33,7 @@ const winCombos = [
 
 const Reels: React.FC = () => {
   // Define state variables for the current symbols on the reels, whether a win has been detected, and which symbols are part of the winning combination (if any)
+  const dispatch = useDispatch();
   const [reelSymbol, setReelSymbol] = useState<string[]>(getNewReels());
   const [winDetected, setWinDetected] = useState(false);
   const [winningSymbols, setWinningSymbols] = useState<number[]>([]);
@@ -86,6 +88,7 @@ const Reels: React.FC = () => {
     });
     if (win) {
       console.log('You win!');
+      dispatch({ type: 'WIN_BET' });
     } else {
       console.log('Better luck next time!');
     }
