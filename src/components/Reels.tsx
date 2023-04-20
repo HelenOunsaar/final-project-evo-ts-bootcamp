@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
+import { store } from "../store";
 import appleImage from '../assets/apple.png';
 import blueberryImage from '../assets/blueberry.png';
 import cherriesImage from '../assets/cherries.png';
@@ -86,9 +87,10 @@ const Reels: React.FC = () => {
         winningSymbols.push(...combo);
       }
     });
+    const state = store.getState();
     if (win) {
       console.log('You win!');
-      dispatch({ type: 'WIN_BET' });
+      dispatch({ type: 'WIN_BET', payload: state.bet * 2 });
     } else {
       console.log('Better luck next time!');
     }
