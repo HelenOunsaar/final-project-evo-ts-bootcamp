@@ -93,6 +93,7 @@ const Reels: React.FC = () => {
       dispatch({ type: 'WIN_BET', payload: state.bet * 2 });
     } else {
       console.log('Better luck next time!');
+      dispatch({ type: 'LOSE_BET', payload: state.bet });
     }
     setWinDetected(win);
     setWinningSymbols(winningSymbols);
