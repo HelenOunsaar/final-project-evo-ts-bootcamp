@@ -6,11 +6,11 @@ const Bet: React.FC = () => {
   const sumWon = useSelector((state: any) => state.sumWon);
 
   return (
-    <div>
-      <label htmlFor="bet">Bet:</label>
+    <div className='betcontainer'>
+      <label htmlFor="bet">Bet</label>
       <input id="bet" value={bet} readOnly />
       <br />
-      <label htmlFor="sumWon">Wins:</label>
+      <label htmlFor="sumWon">Wins</label>
       <input id="sumWon" value={sumWon} readOnly />
     </div>
   );

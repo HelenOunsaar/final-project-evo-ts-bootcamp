@@ -19,11 +19,13 @@ const Level: React.FC<LevelProps> = ({ level }) => {
   };
 
   return (
-    <div>
+    <div className='bet-level-container'>
       <Bet />
       <br />
-      <label htmlFor="level">Level:</label>
-      <input type="range" id="level" min={1} max={10} value={selectedLevel} onChange={handleLevelChange} />
+      <div className='levelstyle'>
+        <label htmlFor="level">Level</label>
+        <input type="range" id="level" min={1} max={10} value={selectedLevel} onChange={handleLevelChange} />
+      </div>
     </div>
   );
 };

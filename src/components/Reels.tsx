@@ -119,7 +119,7 @@ const Reels: React.FC = () => {
         </div>
       </div>
       <div className="btncontainer">
-        <Button onClick={spinReels} text="Spin the reels" />
+        <Button onClick={spinReels} />
       </div>
     </div>
   );

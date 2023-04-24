@@ -29,4 +29,5 @@ This project was built using:
 ## Credits
 
 - SVG backgrounds from https://www.svgbackgrounds.com
-- Symbols from https://www.flaticon.com
+- Symbols from https://www.flaticon.com, spin icon is created by Digby Garrett 
+

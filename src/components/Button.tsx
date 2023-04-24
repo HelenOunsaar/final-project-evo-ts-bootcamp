@@ -1,14 +1,14 @@
 import React from "react";
+import spinIcon from "../assets/spin.png"
 
 type ButtonProps = {
     onClick: () => void;
-    text: string;
 };
 
-const Button: React.FC<ButtonProps> = ({ onClick, text }) => {
+const Button: React.FC<ButtonProps> = ({ onClick }) => {
     return (
         <button className="spinBtn" onClick={onClick}>
-            {text}
+            <img src={spinIcon} alt="spinIcon" />
         </button>
     )
 };
