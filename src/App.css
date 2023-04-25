@@ -48,7 +48,6 @@ img {
   border: none;
   border-radius: 70%;
   padding: 5px;
-  font-size: 21px;
   height: 100px;
   width: 100px;
   box-shadow: 0 2px 4px darkslategray;
@@ -169,6 +168,7 @@ input[type=range]::-moz-range-thumb:active {
 @media (max-width: 900px) {
   .header {
     font-size: 39px;
+    margin-top: 5px;
   }
 
   .reels {
@@ -212,5 +212,11 @@ input[type=range]::-moz-range-thumb:active {
     width: 30px;
     font-size: 16px;
   }
-
+  .spinBtn {
+    width: 80px;
+    height: 80px;
+  }
+  .spinBtn img {
+    margin-left: -3px;
+  }
 } 

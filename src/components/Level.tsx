@@ -8,9 +8,11 @@ interface LevelProps {
 
 const Level: React.FC<LevelProps> = ({ level }) => {
   const dispatch = useDispatch();
+  // initialize the bet state variable with a default value of 10
   const [bet, setBet] = useState<number>(10);
   const [selectedLevel, setSelectedLevel] = useState<number>(level);
 
+   // it is called when the user changes the betting level using the range input
   const handleLevelChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newLevel = parseInt(event.target.value);
     setSelectedLevel(newLevel);

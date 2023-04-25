@@ -118,7 +118,7 @@ const Reels: React.FC = () => {
           <Symbol symbol={reelSymbol[8]} isWinningSymbol={winningSymbols.includes(8)} />
         </div>
       </div>
-      <div className="btncontainer">
+      <div>
         <Button onClick={spinReels} />
       </div>
     </div>

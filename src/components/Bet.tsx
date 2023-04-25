@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 const Bet: React.FC = () => {
+  //get the current value of the bet and sumWon property from the Redux store.
   const bet = useSelector((state: any) => state.bet);
   const sumWon = useSelector((state: any) => state.sumWon);
 
