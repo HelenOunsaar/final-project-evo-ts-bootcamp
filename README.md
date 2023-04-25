@@ -31,3 +31,4 @@ This project was built using:
 - SVG backgrounds from https://www.svgbackgrounds.com
 - Symbols from https://www.flaticon.com, spin icon is created by Digby Garrett 
 
+![Slot Game](./assets/slot-game.png)
