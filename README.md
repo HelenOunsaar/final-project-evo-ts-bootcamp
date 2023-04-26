@@ -13,7 +13,7 @@ To install and run this project, you'll need to have Node.js and npm installed o
 
 ## Usage
 
-To play the casino slot game, simply spin the reels and see if you can hit a winning combination. 
+To play the casino slot game, simply spin the reels and see if you can hit a winning combination. You can try this game here: https://helenounsaar.github.io
 
 ## Technologies Used
 
